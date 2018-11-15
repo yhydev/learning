@@ -1,0 +1,10 @@
+loop <flag>
+jcxz <flag>
+jmp short <flag 0 ~ ff>
+jmp near <flag 0 ~ ffff>
+jmp <reg 16 bit>
+jmp word ptr <address ~ address + 8>
+
+
+jmp far ptr <flag>
+jmp dword ptr <address ~ address + 16>

@@ -1,0 +1,26 @@
+内存状态
+地址	[20000H	20001H	20002H	20003H	20004H	20005H	20006H	20007H]
+数据	[BE	00							]
+
+mov ax,2000h	ax = 2000H
+mov ds,ax		ds = 2000H
+mov bx,1000h	bx = 1000H
+mov ax,[bx]	ax = 00BE
+inc bx		bx = 10001H
+inc bx		bx = 10002H
+mov [bx],ax	[20002H] = BEH,[20003H] = 00H
+inc bx		bx = 10003H
+inc bx		bx = 10004H
+mov [bx],ax	[20004H] = BEH,[20005H] = 00H
+inc bx		bx = 10005H
+mov [bx],al	[20005H] = BEH
+inc bx		bx = 10006H
+mov [bx],al	[20006H] = BEH
+
+结果：
+寄存器
+(ax)=00BEh	(bx)=10006h	(dx)=2000h
+
+内存状态
+地址	[20000H	20001H	20002H	20003H	20004H	20005H	20006H	20007H]
+数据	[BE	00	BE	00	BE	BE	BE		]

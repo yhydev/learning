@@ -1,0 +1,10 @@
+sub al,al	CF = 0	OF = 0	SF = 0	ZF = 1	PF = 1
+mov al,10h
+add al,90h	0	0	1	0	1
+mov al,80h
+add al,80h	1	1	0	1	1
+mov al,0fch	
+add al,05h	1	0	0	0	0
+mov al,70h
+add al,0bh	0	1	1	0	1		
+

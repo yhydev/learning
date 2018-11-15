@@ -1,0 +1,7 @@
+sub al,al		ZF = 1		PF = 1		SF = 0
+mov al,1		
+push ax			
+pop bx			
+add al,bl		ZF = 0		PF = 0		SF = 0
+add al,10		ZF = 0		PF = 1		SF = 0
+mul al			ZF = 0		PF = 1		SF = 0
