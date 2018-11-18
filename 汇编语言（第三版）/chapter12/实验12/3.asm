@@ -5,11 +5,6 @@ assume cs:code
 code segment
 	
 	start:
-	; push es
-	; push si
-	; push ds
-	; push di
-	; push ax
 
 	mov ax,20h
 	mov es,ax
@@ -62,8 +57,9 @@ code segment
 
 	mov cx,12
 	divInterceptPrint:
-	mov ah,ds:[si]
-	mov es:[di],ah
+	mov al,[si]
+	mov ah,00000100B
+	mov es:[di],ax
 	inc si
 	add di,2
 	loop divInterceptPrint
