@@ -31,13 +31,10 @@ int main(int argc,char *argv[]){
 		puts("set _IOLBF fail");
 		exit(EXIT_FAILURE);
 	}
-	
-	while(readbytes){
-		while(0 < (readbytes = fread(buf, 1, bufsize, f1))){
-		//	readbytes = fread(buf, 1, bufsize, f1);
-		//	fprintf(stdout,"%s - %s | of %d bytes", argv[1], buf, readbytes);
-		//	sleep(2);
-			fwrite(buf, 1, readbytes, stdout);
+//TODO	
+	while(!feof(f1)){
+		while(fgets(f1, buf, bufsize) && buf[bufsize] != '\n'){
+			fprintf(f1, "line - %s",argv[1] ,buf);
 		}	
 
 	}
