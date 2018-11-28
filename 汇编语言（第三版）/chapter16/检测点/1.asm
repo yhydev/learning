@@ -1,7 +1,7 @@
 assume cs:code
 
 code segment
-	a dw 0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh,0ffh
+	a dw 1,2,3,4,5,6,7,8
 	b dd 0
 
 
