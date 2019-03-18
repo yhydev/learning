@@ -1,0 +1,6 @@
+rootProject.name = 'mybatis'
+
+String hello(name){
+    "hello " + name
+}
+

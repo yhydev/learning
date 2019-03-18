@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+    <bean class="priv.yanyang.example.aop.service.UserServiceImpl"></bean>
+
+    <bean id="logHandler" class="priv.yanyang.example.aop.LogHandler"></bean>
+
+    <aop:config>
+
+        <aop:aspect ref="logHandler" id="logHandler">
+            <aop:pointcut id="service" expression="execution(* priv.yanyang.example.aop.service.*.*(..))"></aop:pointcut>
+            <aop:after method="after" pointcut-ref="service" ></aop:after>
+        </aop:aspect>
+    </aop:config>
+
+
+</beans>
